@@ -11,7 +11,7 @@ import scala.xml.PrettyPrinter
 
 class TestRestService extends HttpServlet {
 
-  val release = "0.0.0"
+  val release = "0.2.0"
 
   override def doGet(request: HttpServletRequest, response: HttpServletResponse) {
     response.setContentType("text/html")

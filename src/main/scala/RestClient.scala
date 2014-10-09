@@ -10,7 +10,7 @@ object RestClient {
 
   def main(args: Array[String]) {
 
-    val release = "0.0.0"
+    val release = "0.2.0"
 
     if(args.size < 2) {
       println(s"RestClient version $release\n")
