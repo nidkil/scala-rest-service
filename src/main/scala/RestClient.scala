@@ -10,7 +10,14 @@ object RestClient {
 
   def main(args: Array[String]) {
 
-    require(args.size >= 2, "Usage: <action: post, get, delete> <-d: parameters> <-h: headers>> <url>\n\nParameters and headers are key value pair separated by a comma, example: -h header1=1,header2=2")
+    val release = "0.2.0"
+
+    if(args.size < 2) {
+      println(s"RestClient version $release\n")
+      println("Usage: <action: post, get, delete> <-d: parameters> <-h: headers>> <url>\n")
+      println("Parameters and headers are key value pair separated by a comma, example: -h header1=1,header2=2")
+      System.exit(2)
+    }
 
     // Parse request parameters and headers
     def parseArgs(args: Array[String]): Map[String, List[String]] = {

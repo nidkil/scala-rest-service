@@ -11,6 +11,8 @@ import scala.xml.PrettyPrinter
 
 class TestRestService extends HttpServlet {
 
+  val release = "0.2.0"
+
   override def doGet(request: HttpServletRequest, response: HttpServletResponse) {
     response.setContentType("text/html")
     response.setCharacterEncoding("UTF-8")
@@ -35,7 +37,7 @@ class TestRestService extends HttpServlet {
   def prettyPrintResponse(request: HttpServletRequest, response: HttpServletResponse, callType: String) {
     val responseBody: NodeSeq =
       <html>
-        <title>{ callType }</title>
+        <title>{ callType } [TestRestService version {release}]</title>
         <body>
           <h1>{ callType } method called</h1>
           parameters:<br/>{ parameters(request) }<br/><br/>
