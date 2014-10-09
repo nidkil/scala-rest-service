@@ -12,7 +12,7 @@ object RestClient {
 
     val release = "0.0.0"
 
-    if(args.size >= 2) {
+    if(args.size < 2) {
       println(s"RestClient version $release\n")
       println("Usage: <action: post, get, delete> <-d: parameters> <-h: headers>> <url>\n")
       println("Parameters and headers are key value pair separated by a comma, example: -h header1=1,header2=2")
